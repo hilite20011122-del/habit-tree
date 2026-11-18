@@ -37,7 +37,7 @@ header .in{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:10p
 .logo img{width:30px;height:30px;border-radius:6px}
 .logo .l1{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.08em;color:var(--text)}
 .logo .l2{font-size:10px;color:var(--muted);margin-top:1px}
-nav.tabs{margin-left:auto;display:flex;gap:16px}
+nav.tabs{margin-left:auto;display:flex;gap:14px}
 nav.tabs button{font-family:"Shippori Mincho B1",serif;font-size:13.5px;color:var(--muted);padding:6px 0;position:relative}
 nav.tabs button.on{color:var(--gold3)}
 nav.tabs button.on::after{content:"";position:absolute;left:-3px;right:-3px;bottom:0;height:1px;background:var(--gold)}
@@ -228,6 +228,39 @@ nav.tabs button.on::before{content:"";position:absolute;left:50%;bottom:-2px;wid
 .btn.danger{color:#d0605f;border-color:#3a2222}
 textarea.bk{width:100%;height:80px;background:#0c0b0c;border:1px solid var(--line2);border-radius:8px;color:var(--text);font-size:12px;padding:8px;margin-top:8px}
 
+/* gear & sheets */
+.gear{width:32px;height:32px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;margin-left:8px;flex:none}
+.gear svg{width:16px;height:16px;fill:none;stroke:var(--gold);stroke-width:1.6}
+.qedit{margin-left:10px;font-size:11.5px;color:var(--gold);border:1px solid var(--line2);border-radius:99px;padding:4px 10px}
+.mask{position:fixed;inset:0;background:#000c;z-index:50;display:none;align-items:flex-end;justify-content:center}
+.mask.show{display:flex}
+.sheet{width:100%;max-width:560px;max-height:90vh;overflow:auto;background:#121113;border:1px solid var(--line2);border-bottom:0;border-radius:16px 16px 0 0;padding:6px 0 calc(env(safe-area-inset-bottom) + 16px);animation:up .25s ease-out}
+.sheet .grab{width:38px;height:4px;border-radius:9px;background:var(--line2);margin:6px auto 4px}
+.sheet .stt{font-family:"Shippori Mincho B1",serif;font-size:18px;color:var(--gold3);text-align:center;margin:6px 0 2px}
+.sheet .sts{font-size:11.5px;color:var(--muted);text-align:center;margin-bottom:8px;line-height:1.7;padding:0 16px}
+.sheet .grp{font-family:"Shippori Mincho B1",serif;font-size:13px;color:var(--gold);padding:14px 16px 6px}
+.sheet .form .row{padding:9px 16px}
+.unit{display:flex;align-items:center;border:1px solid var(--line2);border-radius:8px;background:#0c0b0c;width:118px}
+.unit input{width:100%;background:transparent;border:0;color:var(--text);padding:9px 0 9px 10px;font-size:16px;text-align:right;outline:none}
+.unit span{padding:0 10px 0 6px;color:var(--gold2);font-size:12px;white-space:nowrap}
+.bmi{margin:4px 16px 0;padding:10px;border-radius:8px;background:#0e0d0e;border:1px solid var(--line);font-size:12px;color:var(--muted);text-align:center}
+.bmi b{color:var(--gold3);font-family:"Cinzel",serif;font-size:16px}
+.sbtn{display:block;width:calc(100% - 32px);margin:12px 16px 0;padding:13px;border-radius:10px;background:linear-gradient(180deg,#d8b56a,#a8853f);color:#1a140a;font-weight:700;font-size:15px}
+.sbtn.ghost{background:none;border:1px solid var(--line2);color:var(--gold3);font-weight:500;font-size:14px}
+.he{display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:1px solid #201d1a}
+.he .hic{width:40px;height:40px;border-radius:50%;background:#0f0e0f;border:1px solid var(--line2);font-size:19px;flex:none;position:relative}
+.he .hic::after{content:"✎";position:absolute;right:-3px;bottom:-3px;font-size:9px;background:var(--gold);color:#1a140a;border-radius:50%;width:15px;height:15px;display:grid;place-items:center}
+.he .hm{flex:1;min-width:0}
+.he input{width:100%;background:#0c0b0c;border:1px solid var(--line2);border-radius:8px;color:var(--text);padding:8px 9px;font-size:16px;outline:none}
+.seg{display:flex;gap:4px;margin-top:6px}
+.seg button{flex:1;font-size:11.5px;padding:5px 0;border-radius:99px;border:1px solid var(--line2);color:var(--muted)}
+.seg button.on{border-color:var(--c);color:#fff;background:color-mix(in srgb,var(--c) 30%,transparent)}
+.he .del{flex:none}
+.picker{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;padding:8px 16px}
+.picker button{aspect-ratio:1;font-size:21px;border-radius:8px}
+.picker button:active,.picker button.on{background:#c9a45c33}
+.hintline{font-size:11px;color:var(--dim);padding:8px 16px 0;line-height:1.6}
+@keyframes up{from{transform:translateY(40px)}}
 /* fx */
 .toasts{position:fixed;top:calc(env(safe-area-inset-top) + 64px);left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:6px;z-index:70;pointer-events:none}
 .toast{background:#161412f2;border:1px solid var(--gold2);border-radius:99px;padding:8px 16px;font-size:13px;box-shadow:0 8px 24px #000c;animation:drop .3s ease-out;display:flex;gap:8px;align-items:center}
@@ -253,6 +286,7 @@ textarea.bk{width:100%;height:80px;background:#0c0b0c;border:1px solid var(--lin
     <button data-tab="treasure">財宝</button>
     <button data-tab="log">記録</button>
   </nav>
+  <button class="gear" id="gear" aria-label="設定"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
 </div></header>
 
 <div class="wrap">
@@ -278,7 +312,7 @@ textarea.bk{width:100%;height:80px;background:#0c0b0c;border:1px solid var(--lin
 
       <div class="sh"><div class="t">本日の試練</div><div class="o"><i></i></div></div>
       <div class="card">
-        <div class="qhead"><span class="qt">今日の習慣</span><span class="qd" id="today"></span></div>
+        <div class="qhead"><span class="qt">今日の習慣</span><span class="qd" id="today"></span><button class="qedit" id="qedit">編集</button></div>
         <div class="qprog"><span class="cz" id="cnt"></span><div class="pb"><i id="pbar"></i></div><span id="pnote"></span></div>
         <div id="habits"></div>
       </div>
@@ -302,8 +336,7 @@ textarea.bk{width:100%;height:80px;background:#0c0b0c;border:1px solid var(--lin
       <div class="card form" id="moneyForm"></div>
       <div class="sh"><div class="t">固定出費</div><div class="o"><i></i></div><div class="d">家賃・通信費・サブスクなど、毎月かかるお金。</div></div>
       <div class="card" id="fixed"></div>
-      <div class="sh"><div class="t">誘惑の値段</div><div class="o"><i></i></div></div>
-      <div class="card form" id="viceForm"></div>
+      <p class="note" style="text-align:center;margin-top:18px">コーラ・タバコの値段と基準本数は、右上の ⚙ 設定から変更できる。</p>
     </div>
   </section>
 
@@ -343,6 +376,7 @@ textarea.bk{width:100%;height:80px;background:#0c0b0c;border:1px solid var(--lin
   </section>
 </div>
 
+<div class="mask" id="mask"><div class="sheet" id="sheet"></div></div>
 <div class="toasts" id="toasts"></div>
 <div class="overlay" id="ov"></div>
 
@@ -353,7 +387,7 @@ const CATS={
   m:{name:'金運',fruit:'金運の実',color:'#d4a640',glow:'#ffd27a'},
   p:{name:'人望',fruit:'人望の実',color:'#9b6bff',glow:'#c7a8ff'}
 };
-const HABITS=[
+const DEFAULT_HABITS=[
   {id:'water',cat:'h',icon:'💧',name:'水を1日1リットル飲む',pt:10},
   {id:'train',cat:'h',icon:'🏋️',name:'筋トレをする',pt:10},
   {id:'supp',cat:'h',icon:'💊',name:'クレアチン＆プロテインを取る',pt:10},
@@ -364,8 +398,36 @@ const HABITS=[
   {id:'thanks',cat:'p',icon:'🙏',name:'感謝を伝える',pt:10},
   {id:'nocomp',cat:'p',icon:'🕯️',name:'不平不満を言わない',pt:10}
 ];
-const HB=Object.fromEntries(HABITS.map(h=>[h.id,h]));
-const FRUIT_COST=30, STREAK_MIN=5, VICE_PT={cola:4,tobacco:1};
+
+/* アイコン自動選択の辞書：[キーワード群, アイコン] 上から順に一致を探す */
+const ICON_DICT=[
+ [['水','water','ウォーター','水分'],'💧'],[['プロテイン','protein','たんぱく','タンパク'],'🥛'],[['クレアチン','サプリ','ビタミン','supplement','薬','錠'],'💊'],
+ [['筋トレ','トレーニング','ジム','ウェイト','ベンチ','スクワット','デッド','workout','gym'],'🏋️'],[['腕立て','プッシュアップ','腹筋','懸垂','プランク'],'💪'],
+ [['ランニング','ジョギング','走','run','マラソン'],'🏃'],[['散歩','ウォーキング','歩','walk','歩数','万歩'],'🚶'],[['自転車','サイクリング','バイク'],'🚴'],[['泳','スイミング','プール'],'🏊'],
+ [['ストレッチ','ヨガ','柔軟','yoga'],'🧘'],[['瞑想','マインドフル','深呼吸','呼吸'],'🧘'],[['シャワー','冷水','風呂','入浴','サウナ'],'🚿'],[['サウナ'],'🧖'],
+ [['睡眠','寝','眠','sleep','早寝'],'😴'],[['早起き','起床','朝','目覚'],'⏰'],[['日光','太陽','朝日','日の光'],'☀️'],
+ [['歯','デンタル','フロス'],'🪥'],[['スキンケア','保湿','化粧水','洗顔','日焼け止め','肌'],'🧴'],[['髪','ヘア','美容院','床屋'],'💇'],[['ひげ','髭','脱毛'],'🪒'],
+ [['体重','計量','体脂肪','測る'],'⚖️'],[['野菜','サラダ'],'🥗'],[['果物','フルーツ','りんご'],'🍎'],[['自炊','料理','ご飯を作','弁当','cook'],'🍳'],[['朝食','朝ごはん'],'🍞'],
+ [['間食','お菓子','甘い','スイーツ','砂糖'],'🍰'],[['禁酒','お酒','飲酒','ビール','アルコール'],'🍺'],[['禁煙','タバコ','たばこ','煙草'],'🚭'],[['コーラ','ジュース','炭酸'],'🥤'],[['コーヒー','カフェイン'],'☕'],[['お茶','緑茶'],'🍵'],
+ [['出費','支出','レシート','記録','家計'],'🧾'],[['家計簿','アプリ','マネーフォワード','スマホ'],'📱'],[['貯金','貯め','節約','積立','預金'],'🐷'],[['投資','NISA','株','資産','iDeCo'],'📈'],
+ [['副業','稼','収入','仕事'],'💼'],[['無駄遣い','買わない','浪費','衝動買い'],'🛑'],[['ポイント','クーポン'],'🎫'],[['財布','お金','現金'],'💰'],[['税','確定申告','保険'],'🏛️'],
+ [['自慢'],'🤐'],[['感謝','ありがとう','お礼'],'🙏'],[['不平','不満','愚痴','文句','悪口'],'🕯️'],[['挨拶','あいさつ'],'👋'],[['笑顔','スマイル'],'😊'],[['褒め','ほめ'],'👏'],
+ [['連絡','電話','LINE','メッセージ','返信'],'📞'],[['家族','親','母','父'],'👨‍👩‍👦'],[['友','仲間'],'🤝'],[['彼女','恋人','パートナー','デート','妻','夫'],'❤️'],[['子ども','子供','息子','娘'],'🧒'],
+ [['手伝','助け','親切','ボランティア','譲'],'🫶'],[['聞く','傾聴','話を'],'👂'],[['怒','イライラ','キレ'],'🧊'],[['謝','ごめん'],'🙇'],[['約束','時間を守','遅刻'],'⌛'],
+ [['読書','本','読む','book'],'📖'],[['勉強','学習','資格','study'],'📚'],[['英語','語学','英会話','単語'],'🔤'],[['日記','ジャーナル','振り返','メモ','書く'],'📝'],[['ブログ','note','投稿','発信','SNS','Threads'],'✍️'],
+ [['プログラミング','コード','開発','アプリ作'],'💻'],[['音楽','ギター','ピアノ','楽器','歌'],'🎸'],[['絵','イラスト','デザイン'],'🎨'],[['写真','カメラ'],'📷'],[['映画','ドラマ'],'🎬'],
+ [['掃除','片付','整理','整頓','断捨離'],'🧹'],[['洗濯'],'🧺'],[['皿','食器','洗い物'],'🍽️'],[['ゴミ'],'🗑️'],[['ベッド','布団','寝具'],'🛏️'],[['植物','水やり','花'],'🪴'],[['ペット','犬','猫'],'🐾'],
+ [['車','洗車','運転','ドライブ'],'🚗'],[['スマホ断ち','デジタルデトックス','スマホを見ない','SNS断ち'],'📵'],[['ゲーム'],'🎮'],[['夜更かし'],'🌙'],[['計画','予定','ToDo','タスク','スケジュール'],'🗓️'],
+ [['目標','ゴール'],'🎯'],[['祈','神社','お参り'],'⛩️'],[['ポジティブ','前向き','自信'],'✨'],[['我慢','耐','忍'],'🛡️']
+];
+const CAT_ICON={h:'💪',m:'💰',p:'🤝'};
+const ICON_PICK=['💧','🥛','💊','🏋️','💪','🏃','🚶','🚴','🏊','🧘','🚿','🧖','😴','⏰','☀️','🪥','🧴','💇','⚖️','🥗','🍎','🍳','🍰','🍺','🚭','🥤','☕','🍵','🧾','📱','🐷','📈','💼','🛑','💰','🏛️','🤐','🙏','🕯️','👋','😊','👏','📞','👨‍👩‍👦','🤝','❤️','🧒','🫶','👂','🧊','🙇','⌛','📖','📚','🔤','📝','✍️','💻','🎸','🎨','📷','🧹','🧺','🍽️','🗑️','🛏️','🪴','🐾','🚗','📵','🌙','🗓️','🎯','⛩️','✨','🛡️','🔥','⭐','🌱','⚔️'];
+function autoIcon(name,cat){const n=(name||'').toLowerCase();for(const [ks,ic] of ICON_DICT){if(ks.some(k=>n.includes(k.toLowerCase())))return ic}return CAT_ICON[cat]||'✦'}
+const activeHabits=()=>S.habits.filter(h=>!h.off);
+const habitMap=()=>Object.fromEntries(S.habits.map(h=>[h.id,h]));
+const ptOf=h=>{const n=activeHabits().filter(x=>x.cat===h.cat).length;return n<=2?15:10};
+const streakMin=()=>Math.max(1,Math.ceil(activeHabits().length*0.55));
+const FRUIT_COST=30, VICE_PT={cola:4,tobacco:1};
 const TREE=[[0,'種子'],[60,'芽吹き'],[250,'苗木'],[700,'若木'],[1600,'大樹'],[3200,'世界樹']];
 // 主人公のステージ（食べた実の合計）
 const HERO=[
@@ -387,9 +449,9 @@ const QUOTES=['昨日の自分を超えるために、今日できる小さな�
 
 /* ================= 保存 ================= */
 const KEY='habitTree.v2';
-function blank(){return {checks:{},eaten:{h:0,m:0,p:0},vice:{},memo:{},
+function blank(){return {checks:{},eaten:{h:0,m:0,p:0},vice:{},memo:{},profile:{age:null,height:null,weight:null},setupDone:false,habits:DEFAULT_HABITS.map(x=>({id:x.id,cat:x.cat,name:x.name,icon:x.icon})),
   money:{income:0,variable:0,fixed:[],target:0,savings:0,savingsDate:'',colaBase:5,colaPrice:146,tobBase:20,tobBox:600}}}
-function normalize(s){const b=blank();s.money=Object.assign(b.money,s.money||{});return Object.assign(b,s)}
+function normalize(s){const b=blank();s.money=Object.assign(b.money,s.money||{});s.profile=Object.assign(b.profile,s.profile||{});if(!Array.isArray(s.habits)||!s.habits.length)delete s.habits;return Object.assign(b,s)}
 function load(){
   try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&s.checks)return normalize(s)}catch(e){}
   try{const o=JSON.parse(localStorage.getItem('habitTree.v1'));if(o&&o.checks){const b=blank();b.checks=o.checks;b.eaten=o.eaten||b.eaten;return b}}catch(e){}
@@ -414,22 +476,22 @@ const num=v=>Math.max(0,parseInt(String(v).replace(/[^\d]/g,''))||0);
 function viceDay(k){
   const v=S.vice[k];if(!v)return {saved:0,pts:0,entered:false};
   const M=S.money;let saved=0,pts=0,entered=false;
-  if(v.cola!=null){entered=true;const d=M.colaBase-v.cola;saved+=d*M.colaPrice;if(d>0)pts+=d*VICE_PT.cola}
-  if(v.tobacco!=null){entered=true;const d=M.tobBase-v.tobacco;saved+=d*(M.tobBox/20);if(d>0)pts+=d*VICE_PT.tobacco}
+  if(v.cola!=null){entered=true;const d=(v.cb??M.colaBase)-v.cola;saved+=d*(v.cp??M.colaPrice);if(d>0)pts+=d*VICE_PT.cola}
+  if(v.tobacco!=null){entered=true;const d=(v.tb??M.tobBase)-v.tobacco;saved+=d*((v.tp??M.tobBox)/20);if(d>0)pts+=d*VICE_PT.tobacco}
   return {saved,pts,entered};
 }
 function compute(){
-  const tk=todayKey();
+  const tk=todayKey(),HM=habitMap(),SM=streakMin();
   const keys=[...Object.keys(S.checks).filter(k=>(S.checks[k]||[]).length),...Object.keys(S.vice)].sort();
   const pts={h:0,m:0,p:0};let streak=0,multToday=1;
   if(keys.length){
     let d=parseKey(keys[0]);const end=parseKey(tk);
     while(d<=end){
-      const k=keyOf(d),list=S.checks[k]||[],mult=1+0.1*Math.min(streak,10);
+      const k=keyOf(d),list=(S.checks[k]||[]).filter(id=>HM[id]),mult=1+0.1*Math.min(streak,10);
       if(k===tk)multToday=mult;
-      list.forEach(id=>{const h=HB[id];if(h)pts[h.cat]+=h.pt*mult});
+      list.forEach(id=>{const h=HM[id];pts[h.cat]+=ptOf(h)*mult});
       pts.h+=viceDay(k).pts*mult;
-      if(list.length>=STREAK_MIN)streak++;else if(k!==tk)streak=0;
+      if(list.length>=SM)streak++;else if(k!==tk)streak=0;
       d=addDays(d,1);
     }
   }
@@ -544,12 +606,12 @@ function render(rebuildFixed=true){
   document.getElementById('stats').innerHTML=Object.entries(CATS).map(([c,v])=>{const val=st.stats[c],t=rankOf(val),nx=RANKS[t+1],pct=nx?(val-RANKS[t][0])/(nx[0]-RANKS[t][0])*100:100;
     return `<div class="card st" style="--c:${v.color}"><div class="top"><i></i>${v.name}</div><div class="v">${val}</div><div class="r">${RANKS[t][1]}</div><div class="bar"><i style="width:${pct}%"></i></div><div class="nx">${nx?`あと${nx[0]-val}で「${nx[1]}」`:'極めた'}</div></div>`}).join('');
   // habits
-  const tk=todayKey(),done=new Set(S.checks[tk]||[]),d=new Date();
+  const tk=todayKey(),act=activeHabits(),done=new Set((S.checks[tk]||[]).filter(id=>act.some(x=>x.id===id))),d=new Date(),SM=streakMin();
   document.getElementById('today').textContent=`${d.getMonth()+1}月${d.getDate()}日（${'日月火水木金土'[d.getDay()]}）`;
-  document.getElementById('habits').innerHTML=HABITS.map(h=>`<button class="habit ${done.has(h.id)?'on':''}" style="--c:${CATS[h.cat].color}" data-h="${h.id}"><span class="hi">${h.icon}</span><span class="hn">${h.name}</span><span class="hp"><i></i>+${Math.round(h.pt*st.multToday)}</span><span class="ck"></span></button>`).join('');
-  document.getElementById('cnt').textContent=`${done.size}/${HABITS.length}`;
-  document.getElementById('pbar').style.width=done.size/HABITS.length*100+'%';
-  document.getElementById('pnote').textContent=done.size>=STREAK_MIN?'連続記録 達成':`あと${STREAK_MIN-done.size}つで連続記録`;
+  document.getElementById('habits').innerHTML=act.map(h=>`<button class="habit ${done.has(h.id)?'on':''}" style="--c:${CATS[h.cat].color}" data-h="${h.id}"><span class="hi">${h.icon}</span><span class="hn">${esc(h.name)}</span><span class="hp"><i></i>+${Math.round(ptOf(h)*st.multToday)}</span><span class="ck"></span></button>`).join('');
+  document.getElementById('cnt').textContent=`${done.size}/${act.length}`;
+  document.getElementById('pbar').style.width=done.size/Math.max(1,act.length)*100+'%';
+  document.getElementById('pnote').textContent=done.size>=SM?'連続記録 達成':`あと${SM-done.size}つで連続記録`;
   renderVices(st);
   // quote & memo
   const qi=Math.floor(parseKey(tk)/864e5)%QUOTES.length;
@@ -565,7 +627,7 @@ function renderVices(st){
   const row=(key,icon,name,base,price)=>{const n=v[key],has=n!=null,diff=has?base-n:0,sv=diff*price;
     return `<div class="vice"><div class="vi">${icon}</div><div><div class="vn">${name}</div><div class="vs">${has?(diff>=0?`基準より${diff}本少ない → <b>${yen(sv)}</b> 浮いた`:`基準より${-diff}本多い → <b class="bad">${yen(sv)}</b>`):`基準 ${base}本／日 ・ ＋−で記録`}</div></div>
       <div class="step"><button data-v="${key}" data-d="-1">−</button><span class="n ${has?'':'none'}">${has?n:'未'}</span><button data-v="${key}" data-d="1">＋</button></div></div>`};
-  document.getElementById('vices').innerHTML=row('cola','🥤','今日飲んだコーラ',M.colaBase,M.colaPrice)+row('tobacco','🚬','今日吸ったタバコ',M.tobBase,M.tobBox/20)
+  document.getElementById('vices').innerHTML=row('cola','🥤','今日飲んだコーラ',v.cb??M.colaBase,v.cp??M.colaPrice)+row('tobacco','🚬','今日吸ったタバコ',v.tb??M.tobBase,(v.tp??M.tobBox)/20)
     +`<div class="vsum">今日の我慢で <b>${yen(vd.saved)}</b> ／ 体力の力 <b>+${Math.round(vd.pts*st.multToday)}</b></div>`;
 }
 function renderTreasure(rebuildFixed=true){
@@ -592,12 +654,6 @@ function renderTreasure(rebuildFixed=true){
   }
   document.getElementById('svdate').textContent=M.savingsDate?`${M.savingsDate.replace(/-/g,'/')} 時点（変えると今日に更新）`:'入力した日を基準に計算';
   if(rebuildFixed)renderFixed();else updateFixedSum();
-  const vf=document.getElementById('viceForm');
-  if(!vf.dataset.built){vf.dataset.built=1;
-    const f=(id,label,sub,u)=>`<div class="row"><label>${label}${sub?`<small>${sub}</small>`:''}</label><div class="yen sm"><span>${u}</span><input inputmode="numeric" id="${id}" value="${M[id]}"></div></div>`;
-    vf.innerHTML=f('colaBase','コーラの基準','1日にいつも飲む本数','本')+f('colaPrice','コーラ1本の値段','','¥')+f('tobBase','タバコの基準','1日にいつも吸う本数','本')+f('tobBox','タバコ1箱の値段','1箱20本で計算','¥');
-    ['colaBase','colaPrice','tobBase','tobBox'].forEach(id=>document.getElementById(id).addEventListener('input',e=>{M[id]=num(e.target.value);save();render(false)}));
-  }
 }
 function renderFixed(){
   const M=S.money,el=document.getElementById('fixed');
@@ -616,8 +672,8 @@ function renderLog(st){
     <div class="meters">${Object.entries(CATS).map(([c,v])=>`<div class="meter" style="--c:${v.color}">${v.fruit}<div class="mb"><i style="width:${st.prog[c]*100}%"></i></div></div>`).join('')}</div>`;
   const today=new Date();today.setHours(0,0,0,0);const start=addDays(today,-((today.getDay()+6)%7)-28);
   let h='月火水木金土日'.split('').map(w=>`<div class="wd">${w}</div>`).join('');
-  for(let i=0;i<35;i++){const d=addDays(start,i),k=keyOf(d),n=(S.checks[k]||[]).length,fut=d>today,a=n/9;
-    h+=`<div class="d ${k===keyOf(today)?'today':''} ${fut?'fut':''}" style="${n?`background:rgba(201,164,92,${.1+a*.55});border-color:rgba(230,207,152,${a*.7});color:${a>.5?'#1a140a':'#e6cf98'}`:''}">${n===9?'✦':d.getDate()}</div>`}
+  for(let i=0;i<35;i++){const d=addDays(start,i),k=keyOf(d),n=(S.checks[k]||[]).length,fut=d>today,TOT=Math.max(1,activeHabits().length),a=Math.min(1,n/TOT);
+    h+=`<div class="d ${k===keyOf(today)?'today':''} ${fut?'fut':''}" style="${n?`background:rgba(201,164,92,${.1+a*.55});border-color:rgba(230,207,152,${a*.7});color:${a>.5?'#1a140a':'#e6cf98'}`:''}">${n>=TOT?'✦':d.getDate()}</div>`}
   document.getElementById('cal').innerHTML=h;
   const ms=Object.keys(S.memo).filter(k=>S.memo[k]&&S.memo[k].trim()).sort().reverse().slice(0,30);
   document.getElementById('memos').innerHTML=ms.length?ms.map(k=>`<div class="mm"><div class="md">${k.replace(/-/g,'.')}</div><div class="mt">${esc(S.memo[k])}</div></div>`).join(''):`<div class="empty">「今日のひとこと」の欄に書いたメモがここに並ぶ。</div>`;
@@ -628,15 +684,17 @@ function toggle(id,el){
   const tk=todayKey(),list=S.checks[tk]||(S.checks[tk]=[]),before=compute(),i=list.indexOf(id);
   if(i>=0)list.splice(i,1);else list.push(id);
   save();const after=render();
-  if(i<0){const h=HB[id],r=el.getBoundingClientRect();floatText(`+${Math.round(h.pt*before.multToday)}`,r.right-74,r.top+8,CATS[h.cat].glow);afterGrow(before,after);
-    if(list.length===STREAK_MIN)toast(`連続記録 ${after.streak}日目`);
-    if(list.length===HABITS.length)overlay('<div class="oi">✦</div>','ALL QUESTS CLEARED','全試練 達成','今日のすべての試練を果たした');
+  const act=activeHabits(),dn=list.filter(x=>act.some(a=>a.id===x)).length;
+  if(i<0){const h=habitMap()[id],r=el.getBoundingClientRect();floatText(`+${Math.round(ptOf(h)*before.multToday)}`,r.right-74,r.top+8,CATS[h.cat].glow);afterGrow(before,after);
+    if(dn===streakMin())toast(`連続記録 ${after.streak}日目`);
+    if(dn===act.length)overlay('<div class="oi">✦</div>','ALL QUESTS CLEARED','全試練 達成','今日のすべての試練を果たした');
     vib(15)}
 }
 function afterGrow(b,a){for(const c in CATS)if(a.produced[c]>b.produced[c])toast(`<span style="color:${CATS[c].glow}">●</span> ${CATS[c].fruit}が実った`);if(a.stage>b.stage)overlay('<div class="oi">🌳</div>','THE TREE GROWS','樹が成長した',`「${TREE[a.stage][1]}」になった`)}
 function vice(key,d){
   const tk=todayKey(),v=S.vice[tk]||(S.vice[tk]={}),base=key==='cola'?S.money.colaBase:S.money.tobBase,before=compute();
   if(v[key]==null)v[key]=d<0?Math.max(0,base-1):base;else v[key]=Math.max(0,v[key]+d);
+  const M=S.money;if(key==='cola'){v.cp=M.colaPrice;v.cb=M.colaBase}else{v.tp=M.tobBox;v.tb=M.tobBase}
   save();afterGrow(before,render());vib(8);
 }
 function eat(c,el){
@@ -667,7 +725,56 @@ ov.onclick=()=>ov.classList.remove('show');
 document.getElementById('cp').onclick=async()=>{const t=JSON.stringify(S);try{await navigator.clipboard.writeText(t);toast('バックアップをコピーした')}catch(e){const ta=document.getElementById('imp');ta.value=t;ta.select();toast('下の欄を長押ししてコピーする')}};
 document.getElementById('impb').onclick=()=>{try{const d=JSON.parse(document.getElementById('imp').value);if(!d||typeof d.checks!=='object')throw 0;S=normalize(d);save();resetForms();render();toast('復元した')}catch(e){toast('データの形式が正しくない')}};
 let armed=false;document.getElementById('rs').onclick=e=>{if(!armed){armed=true;e.target.textContent='本当に消す？（もう一度タップ）';setTimeout(()=>{armed=false;e.target.textContent='すべての記録を消す'},4000);return}S=blank();save();resetForms();render();toast('すべての記録を消した')};
-function resetForms(){['moneyForm','viceForm'].forEach(id=>{const el=document.getElementById(id);delete el.dataset.built;el.innerHTML=''})}
+function resetForms(){['moneyForm'].forEach(id=>{const el=document.getElementById(id);delete el.dataset.built;el.innerHTML=''})}
+
+/* ================= 設定・初期設定 ================= */
+const mask=document.getElementById('mask'),sheet=document.getElementById('sheet');
+function closeSheet(){mask.classList.remove('show');mask.dataset.lock='';render()}
+mask.addEventListener('click',e=>{if(e.target===mask&&!mask.dataset.lock)closeSheet()});
+function uRow(id,label,val,unit,sub){return `<div class="row"><label>${label}${sub?`<small>${sub}</small>`:''}</label><div class="unit"><input inputmode="decimal" id="${id}" value="${val??''}" placeholder="—"><span>${unit}</span></div></div>`}
+function bmiText(){const p=S.profile;if(!p.height||!p.weight)return '身長と体重を入れるとBMIを表示';const b=p.weight/((p.height/100)**2);return `BMI <b>${b.toFixed(1)}</b>　${b<18.5?'低体重':b<25?'普通体重':b<30?'肥満（1度）':'肥満（2度以上）'}`}
+function openSettings(first){
+  const P=S.profile,M=S.money;
+  sheet.innerHTML=`<div class="grab"></div><div class="stt">${first?'はじめに':'設定'}</div><div class="sts">${first?'冒険を始める前に、あなたのことを教えてほしい。<br>あとから右上の ⚙ でいつでも変えられる。':'プロフィールと誘惑の値段を変更できる。'}</div>
+  <div class="grp">プロフィール</div><div class="form">${uRow('pf-age','年齢',P.age,'歳')}${uRow('pf-height','身長',P.height,'cm')}${uRow('pf-weight','体重',P.weight,'kg','変わったら更新しよう')}</div>
+  <div class="bmi" id="bmi">${bmiText()}</div>
+  <div class="grp">誘惑の値段</div><div class="form">${uRow('st-colaPrice','コーラ1本の値段',M.colaPrice,'円')}${uRow('st-colaBase','コーラの基準',M.colaBase,'本/日','1日にいつも飲む本数')}${uRow('st-tobBox','タバコ1箱の値段',M.tobBox,'円','1箱20本で計算')}${uRow('st-tobBase','タバコの基準',M.tobBase,'本/日','1日にいつも吸う本数')}</div>
+  <div class="hintline">値段を変えると、今日以降の記録から新しい値段で計算される（過去の記録はその日の値段のまま）。</div>
+  ${first?'':`<button class="sbtn ghost" id="toEdit">今日の習慣を編集する</button>`}
+  <button class="sbtn" id="stDone">${first?'冒険をはじめる':'閉じる'}</button>`;
+  mask.classList.add('show');mask.dataset.lock=first?'1':'';
+  const fnum=v=>{const x=parseFloat(String(v).replace(/[^\d.]/g,''));return isFinite(x)&&x>0?x:null};
+  [['pf-age','age'],['pf-height','height'],['pf-weight','weight']].forEach(([id,k])=>document.getElementById(id).addEventListener('input',e=>{P[k]=fnum(e.target.value);save();document.getElementById('bmi').innerHTML=bmiText()}));
+  [['st-colaPrice','colaPrice'],['st-colaBase','colaBase'],['st-tobBox','tobBox'],['st-tobBase','tobBase']].forEach(([id,k])=>document.getElementById(id).addEventListener('input',e=>{M[k]=num(e.target.value);save()}));
+  const te=document.getElementById('toEdit');if(te)te.onclick=()=>openEditor();
+  document.getElementById('stDone').onclick=()=>{if(first){S.setupDone=true;save();toast('冒険がはじまる')}closeSheet()};
+}
+let pickFor=null;
+function openEditor(){
+  const cats=Object.entries(CATS);
+  const list=S.habits.map((h,i)=>({h,i})).filter(x=>!x.h.off);
+  sheet.innerHTML=`<div class="grab"></div><div class="stt">今日の習慣を編集</div><div class="sts">名前を入れるとアイコンが自動で選ばれる。アイコンをタップすると自分で選び直せる。</div>
+  ${list.map(({h,i})=>`<div class="he"><button class="hic" data-pick="${i}">${h.icon}</button><div class="hm"><input data-hn="${i}" value="${esc(h.name)}" placeholder="習慣の名前"><div class="seg">${cats.map(([c,v])=>`<button style="--c:${v.color}" class="${h.cat===c?'on':''}" data-hc="${i}" data-c="${c}">${v.name}</button>`).join('')}</div></div><button class="del" data-hd="${i}">✕</button></div>
+  ${pickFor===i?`<div class="picker">${ICON_PICK.map(e=>`<button class="${e===h.icon?'on':''}" data-pi="${i}" data-e="${e}">${e}</button>`).join('')}</div><div class="hintline" style="padding-top:0;padding-bottom:8px;text-align:center"><button data-auto="${i}" style="color:var(--gold);font-size:12px">名前から自動で選ぶ</button></div>`:''}`).join('')}
+  <button class="add" id="hAdd">＋ 習慣を追加</button>
+  <div class="hintline">消した習慣は一覧から消えるが、過去の記録と育った分はそのまま残る。体力・金運・人望は、どの実が育つかを決める。</div>
+  <button class="sbtn" id="edDone">完了</button>`;
+  mask.classList.add('show');mask.dataset.lock='';
+}
+sheet.addEventListener('input',e=>{const t=e.target;if(t.dataset.hn==null)return;const h=S.habits[+t.dataset.hn];h.name=t.value;
+  if(!h.manual){h.icon=autoIcon(h.name,h.cat);const b=sheet.querySelector(`[data-pick="${t.dataset.hn}"]`);if(b)b.firstChild.textContent=h.icon}save()});
+sheet.addEventListener('click',e=>{
+  const t=e.target.closest('button');if(!t)return;
+  if(t.dataset.hc!=null){const h=S.habits[+t.dataset.hc];h.cat=t.dataset.c;if(!h.manual)h.icon=autoIcon(h.name,h.cat);save();openEditor();return}
+  if(t.dataset.pick!=null){pickFor=pickFor===+t.dataset.pick?null:+t.dataset.pick;openEditor();return}
+  if(t.dataset.pi!=null){const h=S.habits[+t.dataset.pi];h.icon=t.dataset.e;h.manual=true;pickFor=null;save();openEditor();return}
+  if(t.dataset.auto!=null){const h=S.habits[+t.dataset.auto];h.manual=false;h.icon=autoIcon(h.name,h.cat);pickFor=null;save();openEditor();return}
+  if(t.dataset.hd!=null){const i=+t.dataset.hd,h=S.habits[i];if(t.dataset.armed){h.off=true;save();openEditor();toast(`「${esc(h.name||'無題')}」を消した`)}else{t.dataset.armed=1;t.textContent='消す?';t.style.width='54px';setTimeout(()=>{if(t.isConnected){delete t.dataset.armed;t.textContent='✕';t.style.width=''}},3000)}return}
+  if(t.id==='hAdd'){S.habits.push({id:'h'+Date.now().toString(36),cat:'h',name:'',icon:CAT_ICON.h});save();openEditor();const ins=sheet.querySelectorAll('[data-hn]');ins[ins.length-1].focus();return}
+  if(t.id==='edDone'){S.habits.forEach(h=>{if(!h.off&&!h.name.trim())h.off=true});pickFor=null;save();closeSheet();return}
+});
+document.getElementById('gear').onclick=()=>openSettings(false);
+document.getElementById('qedit').onclick=()=>openEditor();
 
 /* ================= イベント ================= */
 function setTab(t){tab=t;document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x.id==='tab-'+t));document.querySelectorAll('nav.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));render();window.scrollTo(0,t==='quest'?0:document.getElementById('hero').offsetHeight-10)}
@@ -693,6 +800,7 @@ function dayCheck(){if(todayKey()!==lastDay){lastDay=todayKey();render()}}
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)dayCheck()});
 setInterval(dayCheck,60000);
 render();
+if(!S.setupDone)openSettings(true);
 </script>
 </body>
 </html>
